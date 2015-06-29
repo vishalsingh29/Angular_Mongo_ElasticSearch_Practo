@@ -1,0 +1,38 @@
+
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    </head>
+
+    <div id = "header">
+    <a href = '/'>
+         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSjSzwVN27t5kR3fQeO9cSZk3P7LoGdfwkLDQFGZtG-2krKm8Zf" width = "200" height = "100">
+    </a>
+    </div>   
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message[0][0] }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+     <div align=center> <a href = '/add_doctor_clinic/{{user.id}}'>Add Existing Doctor To Clinic</a></div><br>
+     <div align=center> <a href = '/add_doctor'>Create Doctor To Add to Clinic</a></div>
+    <form method="POST" action="" id="form1">
+        <div> Name   : {{ form.name(value=user.name) }}</div>
+        <div> location : {{form.location(value=user.location)}}</div>
+        <div> City : {{form.city(value=user.city)}}</div>
+        <div> Complete Address  : {{ form.complete_address(value=user.complete_address) }}</div>
+        
+        <div style="display:none">{{ form.id.label }}: {{ form.id() }}</div>
+        <div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i class="mdi-content-send right"></i>
+            </button>
+        </div>
+    </form>
+    {% endwith %}
+</div>

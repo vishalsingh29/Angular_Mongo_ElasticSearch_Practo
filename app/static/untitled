@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    </head>
+
+    <div id = "header">
+         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSjSzwVN27t5kR3fQeO9cSZk3P7LoGdfwkLDQFGZtG-2krKm8Zf">
+    </div>     
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message[0][0] }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    <form method="POST" action="/add_doctor" id="form1">
+        <div> Name   : {{ form.name() }}</div>
+        <div> Experience : {{form.experience}}
+        <div> Email  : {{ form.email() }}</div>
+        <div> Specialisation: {{ form.specialization() }}</div>
+        <div> Phone  : {{ form.phone_number()}}</div>
+        
+        <div style="display:none">{{ form.id.label }}: {{ form.id() }}</div>
+        <div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+    {% endwith %}
+</div>

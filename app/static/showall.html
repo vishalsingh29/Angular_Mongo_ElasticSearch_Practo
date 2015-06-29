@@ -1,0 +1,81 @@
+
+<style>
+    table, tr, th, td {
+        border: 1px solid black;
+    }
+    #res {
+        background-color: #33ccff;
+        padding :10px;
+        margin :10px;
+        width :80%;
+        word-wrap :break-word;
+        border:2 px solid black;
+    }
+    
+    .ids {
+        font-style: italic;
+    }
+    .classes{
+        display :inline-block;
+        font-style: italic;
+    }
+    #main-container{
+        width: 500px;
+        margin: auto;
+        height: auto;
+    }
+    #doctor-container{
+        width:500px;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #d6d6d6;
+    }
+    #image-container{
+        width: 150px;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+    #doctor-details{
+        flex: 1;
+        margin-top: 50px
+    }
+    </style>
+
+    <div id = "header">
+    <a href = '/'>
+         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSjSzwVN27t5kR3fQeO9cSZk3P7LoGdfwkLDQFGZtG-2krKm8Zf">
+    </a>
+    </div>     
+    <a href="/add_doctor">Add New Doctor</a>
+    <div><h2 align='center'>All Doctors</h2></div>
+    {% for user in form %}
+    <div id = "main-container">
+        <div id = "doctor-container">
+            <div id = "image-container">
+              <a href = "{{user.imgsrc}}"><img src="{{user.imgsrc}}" width="130" height="130"></a>
+                
+            </div>
+            <div id = "doctor-details"  >
+                <div class="ids">Name:{{user.name}} </div>
+            <div class="ids">Experience:{{user.experience}} </div>
+             <div class="ids">Education:{{user.education}} </div>
+            <div class="ids">Email:{{user.email}}</div>
+            <div class =
+            <div class="ids">Specialization:{{user.specialization}}</div>
+            <div class="ids">Phone:{{user.phone_number}} </div>
+            <div class="ids">Fee:{{user.fee}} </div>
+             <div id ="homepage"><a href="/update_doctor/{{ user.id }}">Edit</a>
+                                <a href="/delete_doctor_clinic/{{ user.id }}">Delete</a>
+            </div>                    
+            </div>
+
+            
+        </div>
+        
+
+    </div>
+        {% endfor %}
+
+
+

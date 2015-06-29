@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Practo.com</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="{{ practoCSS }}">
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	</head>
+	<body>
+		<div class='container'>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#"><img src="https://www.practo.com/bundles/practopractoapp/images/logos/practo_logo.png" /></a>
+					</div>
+					<div>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Practo for Doctors</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> 
+							<li><a href="#"><span class="glyphicon glyphicon-off"></span> Login</a></li> 
+						</ul>
+					</div>
+				</div>
+			</nav>
+			{% block content %} {% endblock %}
+		</div>
+		{% block scripts %} {% endblock %}
+	</body>
+</html>

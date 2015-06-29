@@ -1,0 +1,24 @@
+
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+
+    </head>
+
+    <div id = "header">
+    <a href = '/'>
+         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSjSzwVN27t5kR3fQeO9cSZk3P7LoGdfwkLDQFGZtG-2krKm8Zf" width = "200" height = "100">
+    </a>
+    </div>
+    <form ng-controller="DoctorController" ng-submit="AddClinic()">
+        Name:<input type='text' name='first_name' ng-model='name' required>
+        city:<input type='text' ng-model='city'>
+        Complete Address: <input type='text' name = 'phone_number' ng-model='complete_address' required>
+        Area:<input type = 'text' name = 'email' ng-model='area' required>
+        Timings:<input type = 'text' name = 'email' ng-model='timings' required>
+        Fee:<input type = 'text' ng-model='fee' required>
+        <input type = 'submit' name = 'submit'>
+    </form>
+</div>

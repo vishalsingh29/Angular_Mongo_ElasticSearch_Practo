@@ -1,0 +1,88 @@
+<head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    </head>
+    <style>
+    #res {
+        background-color: #33ccff;
+        padding :10px;
+        margin :10px;
+        width :50%;
+        margin-left: 300px;
+        word-wrap :break-word;
+        border:2 px solid black;
+    }
+    
+    .ids {
+        font-style: italic;
+    }
+    .classes{
+        display :inline-block;
+        font-style: italic;
+    }
+    #main-container{
+        width: 500px;
+        margin: auto;
+        height: auto;
+    }
+    #doctor-container{
+        width:500px;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #d6d6d6;
+    }
+    #image-container{
+        width: 150px;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+    #doctor-details{
+        flex: 1;
+        margin-top: 50px
+    }
+    #button1{
+                position: absolute;
+                left: 2%;
+                margin-top: 20px;
+                background-color: white;
+                font-color: white;
+                font: 16px bold, arial, sans-serif;
+                border: solid 3px #66CCFF;
+            }
+    </style>
+    <div>
+    <a href = '/'>
+         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSjSzwVN27t5kR3fQeO9cSZk3P7LoGdfwkLDQFGZtG-2krKm8Zf" width = "200" height = "100">
+    </a>   
+    </div>
+    <div><h2 align='center'>All Specializations</h2></div>
+    <div ng-repeat = "user in specializations">
+    <div id = "main-container">
+        <div id = "doctor-container">
+            <!-- <div id = "image-container">
+              <a href = "{{user.imgsrc}}"><img src="{{user.imgsrc}}" width="130" height="130" ></a> -->
+            </div>
+            <div id = "doctor-details"  >
+                <div class="ids">Name:{{user}} </div>
+            <span style="margin-left:5px; cursor:pointer;" ng-click="EditSpecialization(id,$index,user)">&nbsp;&nbsp;&nbsp;<i class="fa fa-remove">Edit</i></span>
+            <span style="margin-left:5px; cursor:pointer;" ng-click="DeleteSpecialization(id,$index)">&nbsp;&nbsp;&nbsp;<i class="fa fa-remove">Delete</i></span>
+            </div>                    
+            </div>
+
+            
+        </div>
+        </div>   
+    <!-- {% endfor %}
+    <div id="pagination">
+        {% if page > 1 %}
+               <a href= '/all_clinics/{{prevLink}}' ><i style = "font-size: 30px; color: #7f7f7f;" class = "glyphicon glyphicon-backward" ></i></a>
+           {% endif %} 
+           {% if hasMore %}
+               <a href ='/all_clinics/{{nextLink}}'><i style = "font-size: 30px; color: #7f7f7f; float: right;" class = "glyphicon glyphicon-forward"></i></a>
+           {% endif %} -->
+           </div>
+

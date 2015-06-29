@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+  
+  
+    <form ng-app="myApp" ng-controller="addDoctor" name="myForm" novalidate>
+      
+      <div class="form-group" style = "margin-left: 240px; margin-top: 20px;">
+        <label for="name">Name</label>
+        <div style = "display: flex; flex-direction: row;">
+          <div style = "width: 800px;" class="inner-addon left-addon">
+            <i class = "glyphicon glyphicon-user"></i>
+            <input class="form-control" type="text" name="name" ng-model="name" required>
+          </div>
+          <div style = "flex:1; margin-left: 20px;">
+            <span style="color:black" ng-show="myForm.name.$dirty && myForm.name.$invalid">
+              <span ng-show="myForm.name.$error.required">Name is required.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group" style = "margin-left: 240px; margin-top: 20px;">
+        <label for="name">Email</label>
+        <div style = "display: flex; flex-direction: row;">
+          <div style = "width: 800px;" class="inner-addon left-addon">
+            <i class = "glyphicon glyphicon-envelope"></i>
+            <input class="form-control" type="email" name="email" ng-model="email" required>
+          </div>
+          <div style = "flex:1; margin-left: 20px;">
+            <span style="color:Black" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+              <span ng-show="myForm.email.$error.required">Email is required.</span>
+              <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+     
+      <div style = "display : flex; flex-direction: row;margin: auto; margin-top: 20px; width: 800px;">
+        <div class="form-group"  style = "flex : 1;">
+            <label for="education" style = "margin-bottom : 5px;">Qualifications</label>
+            <button type = "button" class="btn btn-info" ng-click = addQualification() ><i style = "color:white;" class="glyphicon glyphicon-plus"></i></button>
+            <button type = "button" class="btn btn-info" ng-click = deleteQualification() ><i style = "color:white;" class="glyphicon glyphicon-minus"></i></button>
+            <div style = " margin-top : 10px" ng-repeat="qualificationSelect in qualificationList track by $index">
+              <select  style = "width : 100%;" ng-model="qualificationSelect.name" ng-options="qualification for qualification in qualifications"></select>
+            </div>
+        </div>
+
+        <div class="form-group"  style = "flex : 1;  margin-left : 10px;">
+          <label for="education" style = "margin-bottom : 5px;">Speciality</label>
+          <button type = "button" class="btn btn-info" ng-click = addSpeciality() ><i style = "color:white;" class="glyphicon glyphicon-plus"></i></button>
+          <button type = "button" class="btn btn-info" ng-click = deleteSpeciality() ><i style = "color:white;" class="glyphicon glyphicon-minus"></i></button>
+          <div style = " margin-top : 10px;" ng-repeat="specialitySelect in specialityList track by $index">
+            <select  style = "width : 100%;" ng-model="specialitySelect.name" ng-options="speciality for speciality in specialities"></select>
+          </div>
+        </div>
+      </div>
+
+      <div style = "display : flex; flex-direction: row;margin: auto; margin-top:20px; width: 800px;">
+        <div class="form-group"  style = "flex : 1;">
+            <label for="name">Mobile Number</label>
+            <div class="inner-addon left-addon">
+              <i class = "glyphicon glyphicon-earphone"></i>
+              <input class="form-control" type="text" name="contact_no" ng-model="contact_no" required>
+            </div>
+        </div>
+
+        <div class="form-group"  style = "flex : 1; margin-left: 10px;">
+            <label for="name">Experience</label>
+            <div class="inner-addon left-addon">
+              <i class = "glyphicon glyphicon-calendar"></i>
+              <input class="form-control" type="text" name="experience" ng-model="experience" required>
+            </div>
+        </div>
+      </div>
+
+      <div style = "display : flex; flex-direction: row;margin: auto; margin-top: 20px; width: 800px;">
+        <div class="form-group"  style = "flex : 1;">
+            <label for="services" style = "margin-bottom : 5px;">Services</label>
+            <button type = "button" class="btn btn-info" ng-click = addServices() ><i style = "color:white;" class="glyphicon glyphicon-plus"></i></button>
+            <button type = "button" class="btn btn-info" ng-click = deleteServices() ><i style = "color:white;" class="glyphicon glyphicon-minus"></i></button>
+            <div class = "inner-addon left-addon" ng-repeat = "services in servicesList">
+              <i class = "glyphicon glyphicon-link"></i>
+              <input style = "margin-top: 10px;" class="form-control" type="text" name="services" ng-model="services.name" required>
+            </div>
+        </div>
+
+        <div class="form-group"  style = "flex : 1;  margin-left : 10px;">
+            <label for="awards" style = "margin-bottom : 5px;">Awards</label>
+            <button type = "button" class="btn btn-info" ng-click = addAwards() ><i style = "color:white;" class="glyphicon glyphicon-plus"></i></button>
+            <button type = "button" class="btn btn-info" ng-click = deleteAwards() ><i style = "color:white;" class="glyphicon glyphicon-minus"></i></button>
+            <div class = "inner-addon left-addon" ng-repeat = "awards in awardsList">
+              <i class = "glyphicon glyphicon-gift"></i>
+              <input style = "margin-top: 10px;" class="form-control" type="text" name="awards" ng-model="awards.name" required >
+            </div>
+            
+        </div>
+      </div>
+
+      <div class="form-group" style = "margin-left: 240px; margin-top: 20px; width: 800px;">
+        <label for="name">Recommendations</label>
+          <div class="inner-addon left-addon">
+            <i class = "glyphicon glyphicon-user"></i>
+            <input class="form-control" type="text" name="recommendations" ng-model="recommendations" required>
+          </div>
+      </div>
+      
+      <div class="form-group" style = "margin-left: 240px; margin-top: 20px; width: 800px;">
+        <label for="name">Description</label>
+          <textarea class="form-control" type="text" name="description" ng-model="description" rows="2" cols="50"></textarea>
+      </div>
+
+      <div style= "margin:auto; width: 80px;">
+        <button ng-click = submitDoctor() ng-disabled="myForm.name.$dirty && myForm.name.$invalid ||  myForm.email.$dirty && myForm.email.$invalid" 
+        style = "width: 80px;" type="button" class="btn btn-info">Submit</button>
+      </div>
+
+    </form>
+    {% endblock %}

@@ -1,0 +1,75 @@
+body {
+	padding: 65px;
+	margin: 0;
+	overflow-y: auto;
+	background-image: url('https://www.practo.com/bundles/practopractoapp/images/map-search-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.container {
+	padding: 0;
+	margin: 0;
+}
+.navbar {
+	padding-bottom: 10px;
+	padding-right: 20px;
+	background-color: #ffffff; 
+}
+#search-box {
+	margin-top: 150px;
+	background-color: steelblue;
+}
+.panel-default {
+	padding: 10px;
+}
+.form-group {
+	width: 400px;
+}
+.form-inline .form-control {
+	width: inherit;
+}
+.input-lg {
+	width: 100%;
+}
+.progress {
+	position: relative;
+	z-index: inherit;
+	display: none;
+}
+.doctorCard {
+	height: 150px;
+	margin-bottom: 7px;
+	background-color: rgba(250,250,250,0.8);
+	box-shadow: -1px 0px 2px rgba(0,0,0,0.5);
+	padding: 15px;
+	padding-left: 30px;
+	display: none;
+}
+
+.doctorCard h2 {
+	margin: 0;
+	padding: 0;
+	color: skyblue;
+	font-size: 200%;
+}
+
+.doctorCard h4, p {
+	margin: 0;
+	padding: 0;
+}
+
+.sideCard {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background-color: #eeeeee;
+	padding: 25px;
+	padding-right: 30px;
+}
+
+.pagination-wrapper {
+	width: 100%;
+	display: none;
+}
